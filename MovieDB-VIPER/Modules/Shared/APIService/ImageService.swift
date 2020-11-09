@@ -2,7 +2,7 @@
 //  ImageService.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 08/11/2020.
+//  Created by Conrado Mateu on 08/11/2020.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ public class ImageService {
   static let baseURL = "https://image.tmdb.org/t/p/"
   
   public enum ImageSize: String{
-    case small = "w154/"
+    case small = "w154"
     case medium = "w500"
     case original = "original"
     

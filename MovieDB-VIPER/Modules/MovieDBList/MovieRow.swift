@@ -2,7 +2,7 @@
 //  MovieRow.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 08/11/2020.
+//  Created by Conrado Mateu on 08/11/2020.
 //
 
 import SwiftUI
@@ -13,22 +13,25 @@ struct MovieRow: View {
   
     var body: some View {
       HStack(alignment: .top){
-          ImageView(image: FetchImage(url: movie.imageURL))
+        ImageView(image: FetchImage(url: movie.imageURL))
         VStack(alignment: .leading){
           Text(movie.title)
             .font(.title2)
             .bold()
             .foregroundColor(.red)
           HStack{
+            
+            RatingText(vote_average: movie.vote_average)
+            Spacer()
             if let releaseDate = movie.release_date{
               Text(releaseDate).foregroundColor(.blue)
             }
-            Spacer()
-            RatingText(vote_average: movie.vote_average)
+            
           }.padding(.bottom,5)
           Text(movie.overview)
             .font(.footnote)
             .foregroundColor(.gray)
+            .padding(.bottom, 10)
           
         }
       }.frame(minWidth: 0, maxWidth: .infinity,maxHeight: 200, alignment: .center)
@@ -39,11 +42,11 @@ struct MovieRow: View {
 struct MovieRow_Previews: PreviewProvider {
     static var previews: some View {
       VStack{
-        MovieRow(movie: MovieEntity.fake)
-        MovieRow(movie: MovieEntity.fake2)
-        MovieRow(movie: MovieEntity.fake3)
-        MovieRow(movie: MovieEntity.fake)
-        MovieRow(movie: MovieEntity.fake2)
+        MovieRow(movie: MovieEntity.getRandomFakeMovie)
+        MovieRow(movie: MovieEntity.getRandomFakeMovie)
+        MovieRow(movie: MovieEntity.getRandomFakeMovie)
+        MovieRow(movie: MovieEntity.getRandomFakeMovie)
+        MovieRow(movie: MovieEntity.getRandomFakeMovie)
       }.padding([.leading,.trailing],20)
       .background(Color.brand_background.edgesIgnoringSafeArea(.all))
     }

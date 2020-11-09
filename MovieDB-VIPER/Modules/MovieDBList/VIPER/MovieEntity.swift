@@ -2,15 +2,12 @@
 //  MovieEntity.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 08/11/2020.
+//  Created by Conrado Mateu on 08/11/2020.
 //
 
 import Foundation
 
 class MovieEntity:  Codable, Identifiable, Hashable {
-  static func == (lhs: MovieEntity, rhs: MovieEntity) -> Bool {
-    lhs.id == rhs.id
-  }
   
   let id: Int
   let original_title: String
@@ -22,14 +19,24 @@ class MovieEntity:  Codable, Identifiable, Hashable {
   let poster: String
   let release_date: String
   var releaseDate: Date? {
-      return MovieEntity.dateFormatter.date(from: release_date)
+    return MovieEntity.dateFormatter.date(from: release_date)
+  }
+  var releaseYear: String? {
+    return MovieEntity.yearFormatter.string(from: releaseDate!)
+    
   }
   var imageURL: URL {
     return ImageService.getUrl(for: poster)
   }
+  
   func hash(into hasher: inout Hasher) {
       hasher.combine(id)
   }
+  
+  static func == (lhs: MovieEntity, rhs: MovieEntity) -> Bool {
+    lhs.id == rhs.id
+  }
+  
   enum CodingKeys: String, CodingKey {
       case id
       case original_title
@@ -55,15 +62,7 @@ class MovieEntity:  Codable, Identifiable, Hashable {
     release_date = try values.decode(String.self, forKey: .release_date)
   }
   
-  init(id: Int,
-  original_title: String,
-  title: String,
-  overview: String,
-  popularity: Double,
-  vote_average: String,
-  vote_count: Int,
-  poster: String,
-  release_date: String) {
+  init(id: Int, original_title: String, title: String, overview: String, popularity: Double, vote_average: String, vote_count: Int, poster: String, release_date: String) {
     self.id = id
     self.title = title
     self.original_title = original_title
@@ -77,65 +76,20 @@ class MovieEntity:  Codable, Identifiable, Hashable {
 
 }
 
-extension MovieEntity {
-  
-}
-
 extension MovieEntity{
-  static let dateFormatter: DateFormatter = {
+  static var dateFormatter: DateFormatter  {
       let formatter = DateFormatter()
-      formatter.dateFormat = "yyy-MM-dd"
+      formatter.dateFormat = "yyyy-MM-dd"
       return formatter
-  }()
+  }
+  static var yearFormatter: DateFormatter  {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "yyyy"
+      return formatter
+  }
 }
 
-extension MovieEntity {
-  static var fake: MovieEntity {
-    MovieEntity(id: 598632,
-                original_title: "Test Movie",
-                title: "Test Test Movie",
-                overview: "This is the overview of a TestMovie",
-                popularity: 256548,
-                vote_average: "7.1",
-                vote_count: 2368,
-                poster: "/xoqr4dMbRJnzuhsWDF3XNHQwJ9x.jpg",
-                release_date: "2020-10-16")
-  }
-  
-  static var fake2: MovieEntity {
-    MovieEntity(id: 5632,
-                original_title: "Test Movie",
-                title: "Test Test Movie",
-                overview: "This is the overview of a TestMovie",
-                popularity: 548,
-                vote_average: "9.4",
-                vote_count: 2368,
-                poster: "/lQfdytwN7eh0tXWjIiMceFdBBvD.jpg",
-                release_date: "2019-11-07")
-  }
-  
-  static var fake3: MovieEntity {
-    MovieEntity(id: 5632,
-                original_title: "Test Movie",
-                title: "Test Test Movie",
-                overview: "This is the overview of a TestMovie",
-                popularity: 256,
-                vote_average: "5.6",
-                vote_count: 2368,
-                poster: "/kPzcvxBwt7kEISB9O4jJEuBn72t.jpg",
-                release_date: "2019-11-07")
-  }
-  static var getRandomFakeMovie: MovieEntity { [fake,fake2,fake3].randomElement()!}
-  
-  static var fakes: [MovieEntity] {
-    var res: [MovieEntity] = [MovieEntity]()
-    for _ in 1...5{
-      res.append(MovieEntity.getRandomFakeMovie)
-    }
-    return res
-  }
-  
-}
+
 
 struct mainEntity: Decodable {
   let page: Int

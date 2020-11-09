@@ -2,7 +2,7 @@
 //  MovieDB_VIPERApp.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 08/11/2020.
+//  Created by Conrado Mateu on 08/11/2020.
 //
 
 import SwiftUI
@@ -15,10 +15,16 @@ struct MovieDB_VIPERApp: App {
         WindowGroup {
           NavigationView {
             MovieListView(presenter:
-            MovieListPresenter(interactor:
-              MovieListInteractor(model: model))).background(Color.brand_background
-                                                              .edgesIgnoringSafeArea(.all))
-          }
+             MovieListPresenter(interactor:
+              MovieListInteractor(model: model)))
+              .background(Color.brand_background
+                            .edgesIgnoringSafeArea(.all))
+              .background(NavigationConfigurator { nc in
+                nc.navigationBar.barTintColor = UIColor(Color.brand_background)
+                nc.navigationBar.tintColor = UIColor.red
+                              nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+                          })
+          }      .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

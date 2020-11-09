@@ -2,7 +2,7 @@
 //  RatingText.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 09/11/2020.
+//  Created by Conrado Mateu on 09/11/2020.
 //
 
 import SwiftUI
@@ -24,7 +24,7 @@ struct RatingText: View {
     }
   }
   var body: some View {
-    Text("\(vote_average)%")
+    Text("\(rating)%")
       .foregroundColor(scoreColor)
       .bold()
   }

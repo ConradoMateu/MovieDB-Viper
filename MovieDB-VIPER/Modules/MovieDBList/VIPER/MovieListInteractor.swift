@@ -2,7 +2,7 @@
 //  MovieListInteractor.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 09/11/2020.
+//  Created by Conrado Mateu on 09/11/2020.
 //
 
 import Foundation

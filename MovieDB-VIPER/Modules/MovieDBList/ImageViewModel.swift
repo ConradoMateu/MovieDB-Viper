@@ -2,7 +2,7 @@
 //  ImageViewModel.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 08/11/2020.
+//  Created by Conrado Mateu on 08/11/2020.
 //
 
 import Foundation
@@ -13,16 +13,20 @@ import SwiftUI
 
 public struct ImageView: View {
     @ObservedObject var image: FetchImage
-
+  let posterSize: PosterStyle.Size
+  init (image: FetchImage, posterSize: PosterStyle.Size = .medium){
+    self.image = image
+    self.posterSize = posterSize
+  }
     public var body: some View {
         ZStack {
           Rectangle()
             .fill(Color.gray)
-            .posterStyle(loaded: false, size: .medium)
+            .posterStyle(loaded: false, size: posterSize)
             image.view?
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-              .posterStyle(loaded: true, size: .medium)
+              .posterStyle(loaded: true, size: posterSize)
         }
 
         // (Optional) Animate image appearance
@@ -43,7 +47,7 @@ struct PosterStyle: ViewModifier {
             switch self {
             case .small: return 53
             case .medium: return 100
-            case .big: return 250
+            case .big: return 180
             case .tv: return 333
             }
         }
@@ -51,7 +55,7 @@ struct PosterStyle: ViewModifier {
             switch self {
             case .small: return 80
             case .medium: return 150
-            case .big: return 375
+            case .big: return 270
             case .tv: return 500
             }
         }

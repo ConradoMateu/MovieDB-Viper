@@ -2,7 +2,7 @@
 //  BrandColor.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 08/11/2020.
+//  Created by Conrado Mateu on 08/11/2020.
 //
 
 import Foundation
@@ -23,7 +23,6 @@ extension Color {
     
   public static var brand_bordeaux: Color {
         Color("brand_bordeaux", bundle: nil)
-      
     }
 }
 

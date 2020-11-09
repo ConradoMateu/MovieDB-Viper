@@ -2,7 +2,7 @@
 //  MovieListViewModel.swift
 //  MovieDB-VIPER
 //
-//  Created by Emgy on 09/11/2020.
+//  Created by Conrado Mateu on 09/11/2020.
 //
 
 import Foundation
@@ -30,15 +30,10 @@ final class MovieListViewModel: ObservableObject {
     self.error = apiError
   }
   
-  func unknownError(for apiError: ApiError) {
-    self.error = apiError
-  }
-  
   func sucess(for movies: [MovieEntity]) {
     self.movies = movies
   }
   
-
 }
 
 
