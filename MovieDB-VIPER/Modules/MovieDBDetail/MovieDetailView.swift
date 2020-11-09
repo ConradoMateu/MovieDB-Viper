@@ -47,7 +47,7 @@ struct MovieDetailView: View {
       }.frame(maxHeight: .infinity, alignment: .topLeading)
       .padding([.leading,.trailing], 20)
       .padding([.top,.bottom])
-      .navigationBarTitleDisplayMode(.inline)
+
       .background(Color.brand_background.edgesIgnoringSafeArea(.all))
       
     }
@@ -62,16 +62,4 @@ struct MovieDetailView_Previews: PreviewProvider {
     }
 }
 
-struct NavigationConfigurator: UIViewControllerRepresentable {
-    var configure: (UINavigationController) -> Void = { _ in }
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-        UIViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
-        }
-    }
-
-}

@@ -19,12 +19,10 @@ struct MovieDB_VIPERApp: App {
               MovieListInteractor(model: model)))
               .background(Color.brand_background
                             .edgesIgnoringSafeArea(.all))
-              .background(NavigationConfigurator { nc in
-                nc.navigationBar.barTintColor = UIColor(Color.brand_background)
-                nc.navigationBar.tintColor = UIColor.red
-                              nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-                          })
-          }      .navigationViewStyle(StackNavigationViewStyle())
+              .configureNavigationBar()
+          }      
         }
     }
+  
+
 }

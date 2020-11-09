@@ -28,6 +28,7 @@
 		91F82BFF25599BDD00047732 /* MovieEntityGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82BFE25599BDD00047732 /* MovieEntityGenerator.swift */; };
 		91F82C0325599D1D00047732 /* MovieGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C0225599D1D00047732 /* MovieGenres.swift */; };
 		91F82C0C2559AEE000047732 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C0B2559AEE000047732 /* MovieDetailPresenter.swift */; };
+		91F82C0F2559B6C400047732 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C0E2559B6C400047732 /* NavigationConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		91F82BFE25599BDD00047732 /* MovieEntityGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntityGenerator.swift; sourceTree = "<group>"; };
 		91F82C0225599D1D00047732 /* MovieGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenres.swift; sourceTree = "<group>"; };
 		91F82C0B2559AEE000047732 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
+		91F82C0E2559B6C400047732 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				91F82BFE25599BDD00047732 /* MovieEntityGenerator.swift */,
 				91F82C0225599D1D00047732 /* MovieGenres.swift */,
+				91F82C0E2559B6C400047732 /* NavigationConfigurator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				914089F525587FB0001DAA0F /* MovieEntity.swift in Sources */,
 				914089CE25587A6A001DAA0F /* MovieDB_VIPERApp.swift in Sources */,
 				91F82C0C2559AEE000047732 /* MovieDetailPresenter.swift in Sources */,
+				91F82C0F2559B6C400047732 /* NavigationConfigurator.swift in Sources */,
 				91408A222558CCF2001DAA0F /* MovieListViewModel.swift in Sources */,
 				91408A2B2558CF2A001DAA0F /* MovieListPresenter.swift in Sources */,
 				91408A182558B85E001DAA0F /* MovieListView.swift in Sources */,
