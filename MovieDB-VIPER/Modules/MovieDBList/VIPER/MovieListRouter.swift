@@ -1,0 +1,19 @@
+//
+//  MovieListRouter.swift
+//  MovieDB-VIPER
+//
+//  Created by Conrado Mateu on 09/11/2020.
+//
+
+import Foundation
+import SwiftUI
+
+class MovieListRouter {
+  func makeDetailView(for movie: MovieEntity) -> some View {
+//    let presenter = MovieDetailPresenter(interactor:
+//      MovieDetailInteractor(
+//        movie: movie))
+    return EmptyView()
+//    return TripDetailView(presenter: presenter)
+  }
+}

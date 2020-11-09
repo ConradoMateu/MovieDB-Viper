@@ -3,23 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		914089CE25587A6A001DAA0F /* MovieDB_VIPERApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089CD25587A6A001DAA0F /* MovieDB_VIPERApp.swift */; };
 		914089D025587A6A001DAA0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089CF25587A6A001DAA0F /* ContentView.swift */; };
 		914089D225587A6D001DAA0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914089D125587A6D001DAA0F /* Assets.xcassets */; };
-		914089D525587A6D001DAA0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914089D425587A6D001DAA0F /* Preview Assets.xcassets */; };
+		914089DE25587A81001DAA0F /* VIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089DD25587A81001DAA0F /* VIPER.swift */; };
+		914089EB25587CAB001DAA0F /* BrandColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089EA25587CAB001DAA0F /* BrandColor.swift */; };
+		914089F225587F12001DAA0F /* MovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089F125587F11001DAA0F /* MovieRow.swift */; };
+		914089F525587FB0001DAA0F /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089F425587FB0001DAA0F /* MovieEntity.swift */; };
+		914089FA25588942001DAA0F /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 914089F925588942001DAA0F /* Nuke */; };
+		914089FE255889BE001DAA0F /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089FD255889BE001DAA0F /* ImageService.swift */; };
+		91408A0125588C76001DAA0F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A0025588C76001DAA0F /* APIService.swift */; };
+		91408A04255892BF001DAA0F /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A03255892BF001DAA0F /* ServiceLayer.swift */; };
+		91408A0C25589C19001DAA0F /* FetchImage in Frameworks */ = {isa = PBXBuildFile; productRef = 91408A0B25589C19001DAA0F /* FetchImage */; };
+		91408A0F2558A626001DAA0F /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A0E2558A626001DAA0F /* ImageViewModel.swift */; };
+		91408A142558B029001DAA0F /* RatingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A132558B029001DAA0F /* RatingText.swift */; };
+		91408A182558B85E001DAA0F /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A172558B85D001DAA0F /* MovieList.swift */; };
+		91408A222558CCF2001DAA0F /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A212558CCF2001DAA0F /* MovieListViewModel.swift */; };
+		91408A252558CE0C001DAA0F /* MovieListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A242558CE0C001DAA0F /* MovieListRouter.swift */; };
+		91408A2B2558CF2A001DAA0F /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A2A2558CF2A001DAA0F /* MovieListPresenter.swift */; };
+		91408A2E2558D15F001DAA0F /* MovieListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A2D2558D15F001DAA0F /* MovieListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		914089CA25587A6A001DAA0F /* MovieDB-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieDB-VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		914089CA25587A6A001DAA0F /* MovieDB-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "MovieDB-VIPER.app"; path = "/Users/emgy/iOS/MovieDB-VIPER/build/Debug-iphoneos/MovieDB-VIPER.app"; sourceTree = "<absolute>"; };
 		914089CD25587A6A001DAA0F /* MovieDB_VIPERApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDB_VIPERApp.swift; sourceTree = "<group>"; };
 		914089CF25587A6A001DAA0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		914089D125587A6D001DAA0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		914089D425587A6D001DAA0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		914089D625587A6D001DAA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		914089DD25587A81001DAA0F /* VIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER.swift; sourceTree = "<group>"; };
+		914089EA25587CAB001DAA0F /* BrandColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandColor.swift; sourceTree = "<group>"; };
+		914089F125587F11001DAA0F /* MovieRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRow.swift; sourceTree = "<group>"; };
+		914089F425587FB0001DAA0F /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		914089FD255889BE001DAA0F /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		91408A0025588C76001DAA0F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		91408A03255892BF001DAA0F /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		91408A0E2558A626001DAA0F /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		91408A132558B029001DAA0F /* RatingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingText.swift; sourceTree = "<group>"; };
+		91408A172558B85D001DAA0F /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		91408A212558CCF2001DAA0F /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		91408A242558CE0C001DAA0F /* MovieListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRouter.swift; sourceTree = "<group>"; };
+		91408A2A2558CF2A001DAA0F /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
+		91408A2D2558D15F001DAA0F /* MovieListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				914089FA25588942001DAA0F /* Nuke in Frameworks */,
+				91408A0C25589C19001DAA0F /* FetchImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,36 +67,96 @@
 			isa = PBXGroup;
 			children = (
 				914089CC25587A6A001DAA0F /* MovieDB-VIPER */,
-				914089CB25587A6A001DAA0F /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		914089CB25587A6A001DAA0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				914089CA25587A6A001DAA0F /* MovieDB-VIPER.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		914089CC25587A6A001DAA0F /* MovieDB-VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				91408A1E2558CA5A001DAA0F /* Preview Content */,
+				914089E225587B14001DAA0F /* Modules */,
 				914089CD25587A6A001DAA0F /* MovieDB_VIPERApp.swift */,
 				914089CF25587A6A001DAA0F /* ContentView.swift */,
 				914089D125587A6D001DAA0F /* Assets.xcassets */,
 				914089D625587A6D001DAA0F /* Info.plist */,
-				914089D325587A6D001DAA0F /* Preview Content */,
 			);
 			path = "MovieDB-VIPER";
 			sourceTree = "<group>";
 		};
-		914089D325587A6D001DAA0F /* Preview Content */ = {
+		914089E025587AFD001DAA0F /* MovieDBList */ = {
 			isa = PBXGroup;
 			children = (
-				914089D425587A6D001DAA0F /* Preview Assets.xcassets */,
+				91408A202558CB5B001DAA0F /* VIPER */,
+				914089F125587F11001DAA0F /* MovieRow.swift */,
+				91408A0E2558A626001DAA0F /* ImageViewModel.swift */,
+				91408A172558B85D001DAA0F /* MovieList.swift */,
+			);
+			path = MovieDBList;
+			sourceTree = "<group>";
+		};
+		914089E125587B0C001DAA0F /* MovieDBDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieDBDetail;
+			sourceTree = "<group>";
+		};
+		914089E225587B14001DAA0F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				914089E925587C7F001DAA0F /* Shared */,
+				914089E025587AFD001DAA0F /* MovieDBList */,
+				914089E125587B0C001DAA0F /* MovieDBDetail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		914089E925587C7F001DAA0F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				91408A122558B00D001DAA0F /* Views */,
+				914089DD25587A81001DAA0F /* VIPER.swift */,
+				914089FC255889AC001DAA0F /* APIService */,
+				914089EA25587CAB001DAA0F /* BrandColor.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		914089FC255889AC001DAA0F /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				914089FD255889BE001DAA0F /* ImageService.swift */,
+				91408A0025588C76001DAA0F /* APIService.swift */,
+				91408A03255892BF001DAA0F /* ServiceLayer.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		91408A122558B00D001DAA0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91408A132558B029001DAA0F /* RatingText.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91408A1E2558CA5A001DAA0F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		91408A202558CB5B001DAA0F /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				914089F425587FB0001DAA0F /* MovieEntity.swift */,
+				91408A212558CCF2001DAA0F /* MovieListViewModel.swift */,
+				91408A242558CE0C001DAA0F /* MovieListRouter.swift */,
+				91408A2A2558CF2A001DAA0F /* MovieListPresenter.swift */,
+				91408A2D2558D15F001DAA0F /* MovieListInteractor.swift */,
+			);
+			path = VIPER;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +175,10 @@
 			dependencies = (
 			);
 			name = "MovieDB-VIPER";
+			packageProductDependencies = (
+				914089F925588942001DAA0F /* Nuke */,
+				91408A0B25589C19001DAA0F /* FetchImage */,
+			);
 			productName = "MovieDB-VIPER";
 			productReference = 914089CA25587A6A001DAA0F /* MovieDB-VIPER.app */;
 			productType = "com.apple.product-type.application";
@@ -112,7 +206,11 @@
 				Base,
 			);
 			mainGroup = 914089C125587A6A001DAA0F;
-			productRefGroup = 914089CB25587A6A001DAA0F /* Products */;
+			packageReferences = (
+				914089F825588942001DAA0F /* XCRemoteSwiftPackageReference "Nuke" */,
+				91408A0A25589C19001DAA0F /* XCRemoteSwiftPackageReference "FetchImage" */,
+			);
+			productRefGroup = 914089C125587A6A001DAA0F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -126,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				914089D525587A6D001DAA0F /* Preview Assets.xcassets in Resources */,
 				914089D225587A6D001DAA0F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +236,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				914089D025587A6A001DAA0F /* ContentView.swift in Sources */,
+				914089F225587F12001DAA0F /* MovieRow.swift in Sources */,
+				914089EB25587CAB001DAA0F /* BrandColor.swift in Sources */,
+				91408A2E2558D15F001DAA0F /* MovieListInteractor.swift in Sources */,
+				914089F525587FB0001DAA0F /* MovieEntity.swift in Sources */,
 				914089CE25587A6A001DAA0F /* MovieDB_VIPERApp.swift in Sources */,
+				91408A222558CCF2001DAA0F /* MovieListViewModel.swift in Sources */,
+				914089DE25587A81001DAA0F /* VIPER.swift in Sources */,
+				91408A2B2558CF2A001DAA0F /* MovieListPresenter.swift in Sources */,
+				91408A182558B85E001DAA0F /* MovieList.swift in Sources */,
+				91408A0F2558A626001DAA0F /* ImageViewModel.swift in Sources */,
+				91408A142558B029001DAA0F /* RatingText.swift in Sources */,
+				91408A0125588C76001DAA0F /* APIService.swift in Sources */,
+				91408A252558CE0C001DAA0F /* MovieListRouter.swift in Sources */,
+				91408A04255892BF001DAA0F /* ServiceLayer.swift in Sources */,
+				914089FE255889BE001DAA0F /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +439,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		914089F825588942001DAA0F /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.2;
+			};
+		};
+		91408A0A25589C19001DAA0F /* XCRemoteSwiftPackageReference "FetchImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/FetchImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		914089F925588942001DAA0F /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 914089F825588942001DAA0F /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		91408A0B25589C19001DAA0F /* FetchImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91408A0A25589C19001DAA0F /* XCRemoteSwiftPackageReference "FetchImage" */;
+			productName = FetchImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 914089C225587A6A001DAA0F /* Project object */;
 }
