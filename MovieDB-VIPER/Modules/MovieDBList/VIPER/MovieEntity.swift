@@ -52,7 +52,7 @@ class MovieEntity:  Codable, Identifiable, Hashable {
     vote_average = String(try values.decode(Double.self, forKey: .vote_average))
     vote_count = try values.decode(Int.self, forKey: .vote_count)
       poster = try values.decode(String.self, forKey: .poster)
-    release_date = (try? values.decode(String.self, forKey: .release_date)) ?? "2020-11-11"
+    release_date = try values.decode(String.self, forKey: .release_date)
   }
   
   init(id: Int,

@@ -21,7 +21,6 @@ struct MovieListView: View {
         showListView()
       }
     }.padding([.leading,.trailing],20)
-
     .navigationTitle("")
     .navigationBarHidden(true)
   }
@@ -65,12 +64,13 @@ struct MovieListView: View {
 
 
 
-//struct MovieList_Previews: PreviewProvider {
-//  static var previews: some View {
-//    let presenter = MovieListPresenter()
-//    let viewModel = MovieListViewModel()
-//    presenter.viewModel = viewModel
-//    return MovieListView(presenter: presenter,
-//                         viewModel: viewModel)
-//  }
-//}
+struct MovieList_Previews: PreviewProvider {
+  static var previews: some View {
+    let viewModel = MovieListViewModel()
+    viewModel.initFake()
+    let interactor = MovieListInteractor(model: viewModel)
+    let presenter = MovieListPresenter(interactor: interactor)
+    return MovieListView(presenter: presenter)
+      .background(Color.brand_background.edgesIgnoringSafeArea(.all))
+  }
+}

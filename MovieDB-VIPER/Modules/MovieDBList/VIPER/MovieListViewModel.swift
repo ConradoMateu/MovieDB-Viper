@@ -40,3 +40,10 @@ final class MovieListViewModel: ObservableObject {
   
 
 }
+
+
+extension MovieListViewModel {
+  func initFake() {
+    movies = MovieEntity.fakes
+  }
+}
