@@ -11,43 +11,38 @@ import Combine
 import SwiftUI
 
 final class MovieListPresenter: ObservableObject {
-
-    var router: MovieListRouter =  MovieListRouter()
-    var interactor: MovieListInteractor
+  
+  var router: MovieListRouter =  MovieListRouter()
+  var interactor: MovieListInteractor
   var request: AnyCancellable?
+  
+  @Published var MoviePresenterState: MoviePresenterStateEnum = .empty
   @Published var movies: [MovieEntity] = [] {
     didSet{
       if(movies != []){
         MoviePresenterState = .sucess
-        print(movies.description)
       }
-      
-      
-    }
-  }
-  @Published var error: ApiError? {
-    didSet{
-      MoviePresenterState = .error
     }
   }
   
-  @Published var MoviePresenterState: MoviePresenterStateEnum = .empty
-  enum MoviePresenterStateEnum {
-    case empty, sucess, error
+  @Published var error: ApiError? {
+    didSet{
+      if(error != nil){
+        MoviePresenterState = .error
+      }
+    }
   }
-
+  
   private var cancellables = Set<AnyCancellable>()
   
   init(interactor: MovieListInteractor) {
     self.interactor = interactor
-    self.interactor.model.$movies
-      .assign(to: \.movies, on: self)
-      .store(in: &cancellables)
+    self.bindVariablesToModel()
     request = self.interactor.fetch().on(queue: .main)
       .on(success: { [weak self] data in
-        self?.movies = data.results
+        self?.interactor.sucess(for: data.results)
       }, failure: { [weak self] error in
-        self?.error = error
+        self?.interactor.error(for: error)
       })
   }
   
@@ -56,6 +51,19 @@ final class MovieListPresenter: ObservableObject {
     NavigationLink(destination: router.makeDetailView(for: movie)) {
       content()
     }
+  }
+  
+  func bindVariablesToModel(){
+    self.interactor.model.$movies
+      .assign(to: \.movies, on: self)
+      .store(in: &cancellables)
+    self.interactor.model.$error
+      .assign(to: \.error, on: self)
+      .store(in: &cancellables)
+  }
+  
+  enum MoviePresenterStateEnum {
+    case empty, sucess, error
   }
   
 }

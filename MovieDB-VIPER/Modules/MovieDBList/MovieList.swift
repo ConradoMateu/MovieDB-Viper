@@ -46,7 +46,7 @@ struct MovieListView: View {
         .font(.largeTitle)
         .foregroundColor(.red)
       
-      Divider()
+      Divider().background(Color.white)
       ScrollView(showsIndicators: false){
         ForEach(presenter.movies, id: \.self) { id in
           presenter.linkBuilder(for: id){
