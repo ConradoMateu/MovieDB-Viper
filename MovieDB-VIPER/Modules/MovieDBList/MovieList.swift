@@ -21,8 +21,7 @@ struct MovieListView: View {
         showListView()
       }
     }.padding([.leading,.trailing],20)
-    .background(Color.brand_background
-                  .edgesIgnoringSafeArea(.all))
+
     .navigationTitle("")
     .navigationBarHidden(true)
   }
@@ -30,13 +29,17 @@ struct MovieListView: View {
   func showEmptyView() -> some View {
     Text("No Movies To Show")
       .foregroundColor(.white)
+      .font(.title2)
       .bold()
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
   
   func showError() -> some View {
     Text("An Error Ocurred")
       .foregroundColor(.red)
+      .font(.title2)
       .bold()
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
   
   func showListView() -> some View {

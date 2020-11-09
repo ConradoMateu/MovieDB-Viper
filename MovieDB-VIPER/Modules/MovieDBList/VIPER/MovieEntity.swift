@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieEntity: EntityInterface, Codable, Identifiable, Hashable {
+class MovieEntity:  Codable, Identifiable, Hashable {
   static func == (lhs: MovieEntity, rhs: MovieEntity) -> Bool {
     lhs.id == rhs.id
   }

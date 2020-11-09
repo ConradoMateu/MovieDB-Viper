@@ -16,7 +16,8 @@ struct MovieDB_VIPERApp: App {
           NavigationView {
             MovieListView(presenter:
             MovieListPresenter(interactor:
-              MovieListInteractor(model: model)))
+              MovieListInteractor(model: model))).background(Color.brand_background
+                                                              .edgesIgnoringSafeArea(.all))
           }
         }
     }
