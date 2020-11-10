@@ -11,8 +11,6 @@ import SwiftUI
 class MovieListRouter {
   func makeDetailView(for movie: MovieEntity) -> some View {
     let presenter = MovieDetailPresenter(movie: movie)
-//        movie: movie))
     return MovieDetailView(presenter: presenter)
-//    return TripDetailView(presenter: presenter)
   }
 }

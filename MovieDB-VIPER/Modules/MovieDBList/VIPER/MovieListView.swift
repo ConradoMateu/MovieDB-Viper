@@ -62,9 +62,6 @@ struct MovieListView: View {
 }
 
 
-
-
-
 struct MovieList_Previews: PreviewProvider {
   static var previews: some View {
     let viewModel = MovieListViewModel()

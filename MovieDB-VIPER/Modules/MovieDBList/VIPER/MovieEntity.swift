@@ -30,25 +30,17 @@ class MovieEntity:  Codable, Identifiable, Hashable {
     return ImageService.getUrl(for: poster)
   }
   
-  func hash(into hasher: inout Hasher) {
-    hasher.combine(id)
-  }
-  
-  static func == (lhs: MovieEntity, rhs: MovieEntity) -> Bool {
-    lhs.id == rhs.id
-  }
-  
-  enum CodingKeys: String, CodingKey {
-    case id
-    case original_title
-    case title
-    case overview
-    case popularity
-    case vote_average
-    case vote_count
-    case genre = "genre_ids"
-    case poster = "poster_path"
-    case release_date
+  init(id: Int, original_title: String, title: String, overview: String, popularity: Double, vote_average: String, vote_count: Int, poster: String, release_date: String, genre: MovieGenres) {
+    self.id = id
+    self.title = title
+    self.original_title = original_title
+    self.overview = overview
+    self.popularity = popularity
+    self.vote_average = vote_average
+    self.vote_count = vote_count
+    self.poster = poster
+    self.release_date = release_date
+    self.genre = MovieGenres.toString(for: genre)
   }
   
   required init(from decoder: Decoder) throws {
@@ -72,19 +64,30 @@ class MovieEntity:  Codable, Identifiable, Hashable {
     genre = res
   }
   
-  init(id: Int, original_title: String, title: String, overview: String, popularity: Double, vote_average: String, vote_count: Int, poster: String, release_date: String, genre: MovieGenres) {
-    self.id = id
-    self.title = title
-    self.original_title = original_title
-    self.overview = overview
-    self.popularity = popularity
-    self.vote_average = vote_average
-    self.vote_count = vote_count
-    self.poster = poster
-    self.release_date = release_date
-    self.genre = MovieGenres.toString(for: genre)
+
+}
+
+extension MovieEntity {
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
   }
   
+  static func == (lhs: MovieEntity, rhs: MovieEntity) -> Bool {
+    lhs.id == rhs.id
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case id
+    case original_title
+    case title
+    case overview
+    case popularity
+    case vote_average
+    case vote_count
+    case genre = "genre_ids"
+    case poster = "poster_path"
+    case release_date
+  }
 }
 
 extension MovieEntity{

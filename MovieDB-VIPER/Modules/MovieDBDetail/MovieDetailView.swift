@@ -14,9 +14,12 @@ struct MovieDetailView: View {
   var body: some View {
     VStack(alignment:.leading, spacing: 30){
       VStack(alignment: .leading, spacing: 20){
-        Text("\(presenter.movie.title) (\(presenter.movie.releaseYear ?? ""))")
-          .font(.custom(BrandFont.primary, size: .title2))
-          .foregroundColor(.brand_red)
+        HStack{
+          Text("\(presenter.movie.title) (\(presenter.movie.releaseYear ?? ""))")
+            .font(.custom(BrandFont.primary, size: .title2))
+            .foregroundColor(.brand_red)
+        }
+        
         Divider().background(Color.white)
       }
       

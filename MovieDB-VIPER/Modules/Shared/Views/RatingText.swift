@@ -36,7 +36,5 @@ struct RatingText: View {
     Text(title)
       .foregroundColor(scoreColor)
       .font(.custom(BrandFont.secondary, size:large ? .subTitle : .subTitle2))
-      .bold()
-    
   }
 }

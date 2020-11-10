@@ -22,16 +22,16 @@ enum Router: Equatable {
     case .popular:
       return "/3/movie/popular"
     }
-    
   }
   
   var parameters: [URLQueryItem]? {
     switch self {
-    default:
+    case .popular:
       return [URLQueryItem(name: "api_key", value: apiKey),
               URLQueryItem(name: "page", value: "1"),
               URLQueryItem(name: "language", value: "en-US")]
-      
+    default:
+      return nil
     }
   }
   
@@ -41,7 +41,6 @@ enum Router: Equatable {
       return "GET"
     }
   }
-  
 }
 
 struct API {

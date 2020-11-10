@@ -29,29 +29,7 @@ class MovieListInteractor: ObservableObject {
   func fetch()  -> AnyPublisher<mainEntity, ApiError>{
     return ServiceLayer.shared.run(Router.popular)
   }
-  
-//    func fetch() -> AnyPublisher<mainEntity, ApiError>{
-//      let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=1d9b898a212ea52e283351e521e17871&language=en-US&page=1")!
-//      let request = URLRequest(url: url)
-//      return URLSession.shared.dataTaskPublisher(for: request)
-//      .tryMap { data, response in
-//          guard let httpResponse = response as? HTTPURLResponse else {
-//              throw ApiError.invalidResponse
-//          }
-//          guard httpResponse.statusCode == 200 else {
-//              throw ApiError.statusCode(httpResponse.statusCode)
-//          }
-//          return data
-//      }
-//      .decode(type: mainEntity.self, decoder: JSONDecoder())
-//      .mapError { error -> ApiError in
-//          if let httpError = error as? ApiError {
-//              return httpError
-//          }
-//          return ApiError.unknown(error)
-//      }
-//      .eraseToAnyPublisher()
-//  }
+
 }
 
 

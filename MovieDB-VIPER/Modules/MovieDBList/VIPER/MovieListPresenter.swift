@@ -12,8 +12,9 @@ import SwiftUI
 
 final class MovieListPresenter: ObservableObject {
   
-  var router: MovieListRouter =  MovieListRouter()
-  var interactor: MovieListInteractor
+  private var cancellables = Set<AnyCancellable>()
+  private var router: MovieListRouter =  MovieListRouter()
+  private var interactor: MovieListInteractor
   var request: AnyCancellable?
   
   @Published var MoviePresenterState: MoviePresenterStateEnum = .empty
@@ -33,7 +34,7 @@ final class MovieListPresenter: ObservableObject {
     }
   }
   
-  private var cancellables = Set<AnyCancellable>()
+  
   
   init(interactor: MovieListInteractor) {
     self.interactor = interactor

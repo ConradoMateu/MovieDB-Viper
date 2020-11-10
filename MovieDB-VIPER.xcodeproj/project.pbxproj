@@ -100,7 +100,6 @@
 			children = (
 				91408A202558CB5B001DAA0F /* VIPER */,
 				914089F125587F11001DAA0F /* MovieRow.swift */,
-				91408A0E2558A626001DAA0F /* ImageViewModel.swift */,
 			);
 			path = MovieDBList;
 			sourceTree = "<group>";
@@ -179,6 +178,7 @@
 			children = (
 				91F82BFE25599BDD00047732 /* MovieEntityGenerator.swift */,
 				91F82C0225599D1D00047732 /* MovieGenres.swift */,
+				91408A0E2558A626001DAA0F /* ImageViewModel.swift */,
 				91F82C0E2559B6C400047732 /* NavigationConfigurator.swift */,
 			);
 			path = Helpers;

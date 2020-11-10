@@ -14,7 +14,6 @@ public class ImageService {
     case small = "w154"
     case medium = "w500"
     case original = "original"
-    
   }
   
   static func getUrl(size: ImageSize = .medium,for poster: String) -> URL {

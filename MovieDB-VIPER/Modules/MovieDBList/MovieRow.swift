@@ -19,15 +19,13 @@ struct MovieRow: View {
             .font(.custom(BrandFont.primary, size: .subTitle))
             .foregroundColor(.brand_red)
           HStack{
-            
             RatingText(vote_average: movie.vote_average)
             Spacer()
             if let releaseDate = movie.release_date{
               Text(releaseDate)
-                .foregroundColor(.blue)
+                .foregroundColor(.brand_blue)
                 .font(.custom(BrandFont.secondary, size: .subTitle2))
             }
-            
           }.padding(.bottom,5)
           Text(movie.overview)
             .font(.custom(BrandFont.secondary, size: .footnote))
@@ -42,11 +40,9 @@ struct MovieRow: View {
 struct MovieRow_Previews: PreviewProvider {
     static var previews: some View {
       VStack{
-        MovieRow(movie: MovieEntity.getRandomFakeMovie)
-        MovieRow(movie: MovieEntity.getRandomFakeMovie)
-        MovieRow(movie: MovieEntity.getRandomFakeMovie)
-        MovieRow(movie: MovieEntity.getRandomFakeMovie)
-        MovieRow(movie: MovieEntity.getRandomFakeMovie)
+        ForEach(1..<6){_ in
+          MovieRow(movie: MovieEntity.getRandomFakeMovie)
+        }
       }.padding([.leading,.trailing],20)
       .background(Color.brand_background.edgesIgnoringSafeArea(.all))
     }
