@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MovieGenres: Int {
+enum MovieGenres: Int, CaseIterable{
   case action = 28,
        adventure = 12,
        animation = 16,
@@ -53,7 +53,14 @@ enum MovieGenres: Int {
 }
 
 extension MovieGenres {
-  func toString(for movie: MovieGenres) -> String {
-    MovieGenres.dictConverter[movie]!
+  static func toString(for movie: MovieGenres?) -> String {
+    if let movie = movie{
+      return MovieGenres.dictConverter[movie] ?? ""
+    }
+     return ""
+  }
+  
+  static var getRandom: MovieGenres {
+    MovieGenres.allCases.randomElement()!
   }
 }

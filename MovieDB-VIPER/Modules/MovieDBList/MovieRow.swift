@@ -16,26 +16,26 @@ struct MovieRow: View {
         ImageView(image: FetchImage(url: movie.imageURL))
         VStack(alignment: .leading){
           Text(movie.title)
-            .font(.title2)
-            .bold()
-            .foregroundColor(.red)
+            .font(.custom(BrandFont.primary, size: .subTitle))
+            .foregroundColor(.brand_red)
           HStack{
             
             RatingText(vote_average: movie.vote_average)
             Spacer()
             if let releaseDate = movie.release_date{
-              Text(releaseDate).foregroundColor(.blue)
+              Text(releaseDate)
+                .foregroundColor(.blue)
+                .font(.custom(BrandFont.secondary, size: .subTitle2))
             }
             
           }.padding(.bottom,5)
           Text(movie.overview)
-            .font(.footnote)
-            .foregroundColor(.gray)
+            .font(.custom(BrandFont.secondary, size: .footnote))
+            .foregroundColor(.brand_gray)
             .padding(.bottom, 10)
           
         }
-      }.frame(minWidth: 0, maxWidth: .infinity,maxHeight: 200, alignment: .center)
-
+      }.frame(minWidth: 0, maxWidth: .infinity,maxHeight: 180, alignment: .center)
     }
 }
 

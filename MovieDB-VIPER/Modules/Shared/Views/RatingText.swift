@@ -11,21 +11,32 @@ struct RatingText: View {
   
   let vote_average: String
   var rating: Int { Int(Double(vote_average)! * 10)}
+  var large: Bool
+  
+  init(vote_average: String, large: Bool = false) {
+    self.vote_average = vote_average
+    self.large = large
+  }
+  var title: String {
+    large ? "\(rating)% User Score" : "\(rating)%"
+  }
   var scoreColor: Color {
     get {
       if rating < 40 {
-        return .red
+        return .brand_red
       } else if rating < 60 {
-        return .orange
+        return .brand_orange
       } else if rating < 75 {
-        return .yellow
+        return .brand_yellow
       }
-      return .green
+      return .brand_green
     }
   }
   var body: some View {
-    Text("\(rating)%")
+    Text(title)
       .foregroundColor(scoreColor)
+      .font(.custom(BrandFont.secondary, size:large ? .subTitle : .subTitle2))
       .bold()
+    
   }
 }

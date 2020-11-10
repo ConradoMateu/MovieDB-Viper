@@ -17,13 +17,36 @@ extension UIColor {
 
 
 extension Color {
-    public static var brand_background: Color {
-      Color("brand_background")
-    }
-    
+  
+  var uiColor: UIColor {
+    UIColor(self)
+  }
+  public static var brand_background: Color {
+    Color("brand_background")
+  }
+  
   public static var brand_bordeaux: Color {
-        Color("brand_bordeaux", bundle: nil)
-    }
+    Color("brand_bordeaux")
+  }
+  
+  public static var brand_gray: Color {
+    Color("brand_gray")
+  }
+  public static var brand_red: Color {
+    Color("brand_red")
+  }
+  public static var brand_white: Color {
+    Color("brand_white")
+  }
+  public static var brand_yellow: Color {
+    Color("brand_yellow")
+  }
+  public static var brand_green: Color {
+    Color("brand_green")
+  }
+  public static var brand_orange: Color {
+    Color("brand_orange")
+  }
 }
 
 

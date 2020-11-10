@@ -13,9 +13,9 @@ struct ConfigureNavigation: ViewModifier {
     func body(content: Content) -> some View {
         return content
           .background(NavigationConfigurator { nc in
-            nc.navigationBar.barTintColor = UIColor(Color.brand_background)
-            nc.navigationBar.tintColor = UIColor.red
-                          nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+            nc.navigationBar.barTintColor = Color.brand_background.uiColor
+            nc.navigationBar.tintColor = Color.brand_red.uiColor
+            nc.navigationBar.titleTextAttributes = [.foregroundColor : Color.brand_white.uiColor]
                       })
           .navigationBarTitleDisplayMode(.inline)
           .navigationViewStyle(StackNavigationViewStyle())

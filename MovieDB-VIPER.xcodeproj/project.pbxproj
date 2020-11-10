@@ -29,6 +29,9 @@
 		91F82C0325599D1D00047732 /* MovieGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C0225599D1D00047732 /* MovieGenres.swift */; };
 		91F82C0C2559AEE000047732 /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C0B2559AEE000047732 /* MovieDetailPresenter.swift */; };
 		91F82C0F2559B6C400047732 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C0E2559B6C400047732 /* NavigationConfigurator.swift */; };
+		91F82C16255A0EE500047732 /* BrandFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C15255A0EE500047732 /* BrandFont.swift */; };
+		91F82C22255A22C200047732 /* Cooper Std Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91F82C21255A22C200047732 /* Cooper Std Black.ttf */; };
+		91F82C2C255A23F900047732 /* BwSurco-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91F82C2B255A23F900047732 /* BwSurco-Book.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		91F82C0225599D1D00047732 /* MovieGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGenres.swift; sourceTree = "<group>"; };
 		91F82C0B2559AEE000047732 /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		91F82C0E2559B6C400047732 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		91F82C15255A0EE500047732 /* BrandFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFont.swift; sourceTree = "<group>"; };
+		91F82C21255A22C200047732 /* Cooper Std Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cooper Std Black.ttf"; sourceTree = "<group>"; };
+		91F82C2B255A23F900047732 /* BwSurco-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BwSurco-Book.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		914089E925587C7F001DAA0F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				91F82C11255A0E6900047732 /* Font */,
 				91F82BFD25599BCD00047732 /* Helpers */,
 				91408A122558B00D001DAA0F /* Views */,
 				914089FC255889AC001DAA0F /* APIService */,
@@ -175,6 +182,16 @@
 				91F82C0E2559B6C400047732 /* NavigationConfigurator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		91F82C11255A0E6900047732 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				91F82C21255A22C200047732 /* Cooper Std Black.ttf */,
+				91F82C2B255A23F900047732 /* BwSurco-Book.otf */,
+				91F82C15255A0EE500047732 /* BrandFont.swift */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F82C2C255A23F900047732 /* BwSurco-Book.otf in Resources */,
+				91F82C22255A22C200047732 /* Cooper Std Black.ttf in Resources */,
 				914089D225587A6D001DAA0F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F82C16255A0EE500047732 /* BrandFont.swift in Sources */,
 				91F82BFB2559986500047732 /* MovieDetailView.swift in Sources */,
 				914089F225587F12001DAA0F /* MovieRow.swift in Sources */,
 				914089EB25587CAB001DAA0F /* BrandColor.swift in Sources */,

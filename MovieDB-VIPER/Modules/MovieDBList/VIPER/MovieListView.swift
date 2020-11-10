@@ -21,34 +21,35 @@ struct MovieListView: View {
         showListView()
       }
     }.padding([.leading,.trailing],20)
+    .padding(.top,10)
     .navigationTitle("Popular")
     .navigationBarHidden(true)
   }
   
   func showEmptyView() -> some View {
     Text("No Movies To Show")
-      .foregroundColor(.white)
-      .font(.title2)
-      .bold()
+      .foregroundColor(.brand_white)
+      .font(.custom(BrandFont.primary, size: .subTitle))
       .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
   
   func showError() -> some View {
     Text("An Error Ocurred")
-      .foregroundColor(.red)
-      .font(.title2)
-      .bold()
+      .foregroundColor(.brand_red)
+      .font(.custom(BrandFont.primary, size: .subTitle))
       .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
   
   func showListView() -> some View {
-    VStack(alignment:.leading){
-      Text("Popular")
-        .bold()
-        .font(.largeTitle)
-        .foregroundColor(.red)
-      
-      Divider().background(Color.white)
+    VStack(alignment:.leading, spacing: 20){
+      VStack(alignment:.leading,spacing:5){
+        Text("Popular")
+          .bold()
+          .font(.custom(BrandFont.primary, size: .title))
+          .foregroundColor(.brand_red)
+        Divider().background(Color.brand_white)
+      }
+
       ScrollView(showsIndicators: false){
         ForEach(presenter.movies, id: \.self) { id in
           presenter.linkBuilder(for: id){

@@ -20,6 +20,17 @@ struct MovieDB_VIPERApp: App {
               .background(Color.brand_background
                             .edgesIgnoringSafeArea(.all))
               .configureNavigationBar()
+              .onAppear(){
+                
+                    for familyName in UIFont.familyNames {
+                        print("\n-- \(familyName) \n")
+                        for fontName in UIFont.fontNames(forFamilyName: familyName) {
+                            print(fontName)
+                        }
+                    }
+                
+              }
+            
           }      
         }
     }
