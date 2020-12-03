@@ -15,7 +15,7 @@ struct MovieDB_VIPERApp: App {
         WindowGroup {
           NavigationView {
             MovieListView(presenter:
-             MovieListPresenter(interactor:
+                            MovieListFakeErrorPresenter(interactor:
               MovieListInteractor(model: model)))
               .background(Color.brand_background
                             .edgesIgnoringSafeArea(.all))

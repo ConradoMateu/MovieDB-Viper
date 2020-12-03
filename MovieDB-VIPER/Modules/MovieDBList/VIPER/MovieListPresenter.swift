@@ -10,14 +10,56 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class MovieListPresenter: ObservableObject {
+
+protocol MovieListPresenterProtocol {
   
-  private var cancellables = Set<AnyCancellable>()
-  private var router: MovieListRouter =  MovieListRouter()
-  private var interactor: MovieListInteractor
+  init(interactor: MovieListInteractor)
+  var MoviePresenterStatePublished: Published<MoviePresenterStateEnum>.Publisher {get}
+  var movies: [MovieEntity] {get set}
+  var error: ApiError? { get set }
+  
+  var router: MovieListRouter {get set}
+  var interactor: MovieListInteractor {get set}
+  
+  func linkBuilder<Content: View>(for movie: MovieEntity, @ViewBuilder content: () -> Content
+  ) -> NavigationLink<Content,AnyView>
+  
+}
+
+final class MovieListFakeErrorPresenter: MovieListPresenterProtocol {
+  var MoviePresenterStatePublished:Published<MoviePresenterStateEnum>.Publisher {$MoviePresenterState}
+  
+  @Published var MoviePresenterState: MoviePresenterStateEnum = .error
+  @Published var movies: [MovieEntity] = []
+  @Published var error: ApiError?
+  
+  var router: MovieListRouter =  MovieListRouter()
+  var interactor: MovieListInteractor
+  
+  init(interactor: MovieListInteractor) {
+    self.interactor = interactor
+
+  }
+  func linkBuilder<Content>(for movie: MovieEntity, content: () -> Content) -> NavigationLink<Content, AnyView> where Content : View {
+    NavigationLink(destination: AnyView(EmptyView())) {
+      content()
+    }
+  }
+  
+}
+final class MovieListPresenter: MovieListPresenterProtocol {
+
+  var router: MovieListRouter =  MovieListRouter()
+  var interactor: MovieListInteractor
   var request: AnyCancellable?
+
+  var MoviePresenterStatePublished:Published<MoviePresenterStateEnum>.Publisher {$MoviePresenterState}
   
   @Published var MoviePresenterState: MoviePresenterStateEnum = .empty
+  private var cancellables = Set<AnyCancellable>()
+
+  
+
   @Published var movies: [MovieEntity] = [] {
     didSet{
       if(movies != []){
@@ -35,7 +77,6 @@ final class MovieListPresenter: ObservableObject {
   }
   
   
-  
   init(interactor: MovieListInteractor) {
     self.interactor = interactor
     self.bindVariablesToModel()
@@ -47,12 +88,12 @@ final class MovieListPresenter: ObservableObject {
       })
   }
   
-  func linkBuilder<Content: View>(for movie: MovieEntity, @ViewBuilder content: () -> Content
-  ) -> some View {
-    NavigationLink(destination: router.makeDetailView(for: movie)) {
+  func linkBuilder<Content>(for movie: MovieEntity, content: () -> Content) -> NavigationLink<Content, AnyView> where Content : View {
+    NavigationLink(destination: AnyView(router.makeDetailView(for: movie))) {
       content()
     }
   }
+  
   
   func bindVariablesToModel(){
     self.interactor.model.$movies
@@ -63,8 +104,9 @@ final class MovieListPresenter: ObservableObject {
       .store(in: &cancellables)
   }
   
-  enum MoviePresenterStateEnum {
-    case empty, sucess, error
-  }
-  
+
+}
+
+public enum MoviePresenterStateEnum {
+  case empty, sucess, error
 }
