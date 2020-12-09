@@ -49,12 +49,13 @@ extension MovieEntity {
   }
   static var getRandomFakeMovie: MovieEntity { [fake,fake2,fake3].randomElement()!}
   
-  static var fakes: [MovieEntity] {
+  static func fakes(quantity: Int) -> [MovieEntity] {
     var res: [MovieEntity] = [MovieEntity]()
-    for _ in 1...5{
+    for _ in 1...quantity{
       res.append(MovieEntity.getRandomFakeMovie)
     }
     return res
   }
+  static var fakes: [MovieEntity] { fakes(quantity: 5)}
   
 }

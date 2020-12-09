@@ -19,12 +19,9 @@ class MovieEntity:  Codable, Identifiable, Hashable {
   let poster: String
   let release_date: String
   let genre: String
-  var releaseDate: Date? {
-    return MovieEntity.dateFormatter.date(from: release_date)
-  }
+  
   var releaseYear: String? {
-    return MovieEntity.yearFormatter.string(from: releaseDate!)
-    
+    return Formatter.releaseYear(from: release_date)
   }
   var imageURL: URL {
     return ImageService.getUrl(for: poster)
@@ -90,22 +87,8 @@ extension MovieEntity {
   }
 }
 
-extension MovieEntity{
-  static var dateFormatter: DateFormatter  {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd"
-    return formatter
-  }
-  static var yearFormatter: DateFormatter  {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy"
-    return formatter
-  }
-}
 
 
 
-struct mainEntity: Decodable {
-  let page: Int
-  let results: [MovieEntity]
-}
+
+

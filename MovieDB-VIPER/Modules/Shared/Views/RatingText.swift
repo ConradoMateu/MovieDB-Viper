@@ -10,8 +10,9 @@ import SwiftUI
 struct RatingText: View {
   
   let vote_average: String
+  let large: Bool
   var rating: Int { Int(Double(vote_average)! * 10)}
-  var large: Bool
+  
   
   init(vote_average: String, large: Bool = false) {
     self.vote_average = vote_average

@@ -11,16 +11,16 @@ import SwiftUI
 struct MovieDB_VIPERApp: App {
   
   var model = MovieListViewModel()
-    var body: some Scene {
-        WindowGroup {
-          NavigationView {
-            MovieListView(presenter:
-                            MovieListFakeErrorPresenter(interactor:
-              MovieListInteractor(model: model)))
-              .background(Color.brand_background
-                            .edgesIgnoringSafeArea(.all))
-              .configureNavigationBar()
-          }      
-        }
+  var body: some Scene {
+    WindowGroup {
+      NavigationView {
+        MovieListView(presenter:
+                        MovieListPresenter(interactor:
+                                            MovieListInteractor(model: model)))
+          .background(Color.brand_background
+                        .edgesIgnoringSafeArea(.all))
+          
+      }      
     }
+  }
 }

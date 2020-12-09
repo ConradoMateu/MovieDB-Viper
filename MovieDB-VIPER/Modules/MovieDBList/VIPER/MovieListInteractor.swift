@@ -8,7 +8,15 @@
 import Foundation
 import Combine
 
-class MovieListInteractor: ObservableObject {
+protocol MovieListInteractorProtocol {
+  var model: MovieListViewModel {get set}
+  
+  func error(for apiError: ApiError)
+  func sucess(for movies: [MovieEntity])
+  func fetchData() -> AnyCancellable
+}
+
+class MovieListInteractor: ObservableObject, MovieListInteractorProtocol {
   @Published var model: MovieListViewModel
   
   init(model: MovieListViewModel) {
@@ -19,35 +27,19 @@ class MovieListInteractor: ObservableObject {
     self.model.error = apiError
   }
   
-  func unknownError(for apiError: ApiError) {
-    self.model.error = apiError
-  }
-  
   func sucess(for movies: [MovieEntity]) {
     self.model.movies = movies
   }
-  func fetch()  -> AnyPublisher<mainEntity, ApiError>{
+  func getPopular()  -> AnyPublisher<MainEntity, ApiError>{
     return ServiceLayer.shared.run(Router.popular)
   }
-
-}
-
-
-public extension Publisher {
-
-    func on(queue: DispatchQueue) -> Publishers.ReceiveOn<Self, DispatchQueue> {
-        self.receive(on: queue, options: nil)
-    }
-
-    func on(success: @escaping ((Self.Output) -> Void),
-            failure: @escaping ((Self.Failure) -> Void)) -> AnyCancellable {
-        self.sink(receiveCompletion: { completion in
-            switch completion {
-            case .failure(let error):
-                failure(error)
-            case .finished:
-                break
-            }
-        }, receiveValue: success)
-    }
+  
+  func fetchData() -> AnyCancellable{
+    return self.getPopular().on(queue: .main)
+  .on(success: { [weak self] data in
+    self?.sucess(for: data.results)
+  }, failure: { [weak self] error in
+    self?.error(for: error)
+  })
+  }
 }

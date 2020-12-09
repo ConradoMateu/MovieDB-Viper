@@ -51,7 +51,7 @@ struct MovieDetailView: View {
     .padding([.leading, .trailing],20)
     .padding(.top,30)
     .background(Color.brand_background.edgesIgnoringSafeArea(.all))
-    
+    .navigationBarColor(Color.brand_red.uiColor)
   }
 }
 

@@ -8,35 +8,42 @@
 import Foundation
 import SwiftUI
 
-struct ConfigureNavigation: ViewModifier {
-  
-    func body(content: Content) -> some View {
-        return content
-          .background(NavigationConfigurator { nc in
-            nc.navigationBar.barTintColor = Color.brand_background.uiColor
-            nc.navigationBar.tintColor = Color.brand_red.uiColor
-            nc.navigationBar.titleTextAttributes = [.foregroundColor : Color.brand_white.uiColor]
-                      })
-          .navigationBarTitleDisplayMode(.inline)
-          .navigationViewStyle(StackNavigationViewStyle())
-    }
-  
-  struct NavigationConfigurator: UIViewControllerRepresentable {
-      var configure: (UINavigationController) -> Void = { _ in }
+struct NavigationBarModifier: ViewModifier {
+        
+    var backgroundColor: UIColor?
+    
+    init( backgroundColor: UIColor?) {
+        self.backgroundColor = backgroundColor
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithTransparentBackground()
+        coloredAppearance.backgroundColor = .clear
+        coloredAppearance.titleTextAttributes = [.foregroundColor: Color.brand_white.uiColor]
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: Color.brand_white.uiColor]
+        
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        UINavigationBar.appearance().tintColor = Color.brand_background.uiColor
 
-      func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-          UIViewController()
-      }
-      func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-          if let nc = uiViewController.navigationController {
-              self.configure(nc)
-          }
-      }
-  }
+    }
+    
+    func body(content: Content) -> some View {
+        ZStack{
+            content
+            VStack {
+                GeometryReader { geometry in
+                    Color(self.backgroundColor ?? .clear)
+                        .frame(height: geometry.safeAreaInsets.top)
+                        .edgesIgnoringSafeArea(.top)
+                }
+            }.navigationBarTitleDisplayMode(.inline)
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+    }
 }
 
 extension View {
-    func configureNavigationBar() -> some View {
-        return ModifiedContent(content: self, modifier: ConfigureNavigation())
+    func navigationBarColor(_ backgroundColor: UIColor?) -> some View {
+        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor))
     }
 }
