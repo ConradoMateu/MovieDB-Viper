@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		911BCBF62580F287004639EF /* MovieDB_VIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCBF52580F287004639EF /* MovieDB_VIPERTests.swift */; };
 		911BCC012580F3E2004639EF /* MovieListFakeStatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC002580F3E2004639EF /* MovieListFakeStatePresenter.swift */; };
 		911BCC0A2580F880004639EF /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC092580F880004639EF /* MainEntity.swift */; };
 		911BCC0E2580F9CE004639EF /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC0D2580F9CE004639EF /* DateFormatter.swift */; };
 		911BCC122580FF77004639EF /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC112580FF77004639EF /* Publisher.swift */; };
 		911BCC162580FFF0004639EF /* MovieListFakeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC152580FFF0004639EF /* MovieListFakeInteractor.swift */; };
+		911BCC1C25810775004639EF /* MovieListPresenterBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC1B25810775004639EF /* MovieListPresenterBinding.swift */; };
 		914089CE25587A6A001DAA0F /* MovieDB_VIPERApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089CD25587A6A001DAA0F /* MovieDB_VIPERApp.swift */; };
 		914089D225587A6D001DAA0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914089D125587A6D001DAA0F /* Assets.xcassets */; };
 		914089EB25587CAB001DAA0F /* BrandColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914089EA25587CAB001DAA0F /* BrandColor.swift */; };
@@ -30,6 +30,10 @@
 		91408A252558CE0C001DAA0F /* MovieListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A242558CE0C001DAA0F /* MovieListRouter.swift */; };
 		91408A2B2558CF2A001DAA0F /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A2A2558CF2A001DAA0F /* MovieListPresenter.swift */; };
 		91408A2E2558D15F001DAA0F /* MovieListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91408A2D2558D15F001DAA0F /* MovieListInteractor.swift */; };
+		91CC031D2587982900993829 /* MovieListFakeErrorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC031C2587982900993829 /* MovieListFakeErrorInteractor.swift */; };
+		91F399012589862D0012F683 /* RatingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F399002589862D0012F683 /* RatingViewTests.swift */; };
+		91F39905258988AC0012F683 /* DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F39904258988AC0012F683 /* DateFormatterTests.swift */; };
+		91F3990C258A22FC0012F683 /* MovieListFakeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911BCC152580FFF0004639EF /* MovieListFakeInteractor.swift */; };
 		91F82BFB2559986500047732 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82BFA2559986500047732 /* MovieDetailView.swift */; };
 		91F82BFF25599BDD00047732 /* MovieEntityGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82BFE25599BDD00047732 /* MovieEntityGenerator.swift */; };
 		91F82C0325599D1D00047732 /* MovieGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F82C0225599D1D00047732 /* MovieGenres.swift */; };
@@ -52,13 +56,13 @@
 
 /* Begin PBXFileReference section */
 		911BCBF32580F287004639EF /* MovieDB-VIPERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MovieDB-VIPERTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		911BCBF52580F287004639EF /* MovieDB_VIPERTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDB_VIPERTests.swift; sourceTree = "<group>"; };
 		911BCBF72580F287004639EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		911BCC002580F3E2004639EF /* MovieListFakeStatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListFakeStatePresenter.swift; sourceTree = "<group>"; };
 		911BCC092580F880004639EF /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
 		911BCC0D2580F9CE004639EF /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		911BCC112580FF77004639EF /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		911BCC152580FFF0004639EF /* MovieListFakeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListFakeInteractor.swift; sourceTree = "<group>"; };
+		911BCC1B25810775004639EF /* MovieListPresenterBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenterBinding.swift; sourceTree = "<group>"; };
 		914089CD25587A6A001DAA0F /* MovieDB_VIPERApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDB_VIPERApp.swift; sourceTree = "<group>"; };
 		914089D125587A6D001DAA0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		914089D625587A6D001DAA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +79,9 @@
 		91408A242558CE0C001DAA0F /* MovieListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRouter.swift; sourceTree = "<group>"; };
 		91408A2A2558CF2A001DAA0F /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
 		91408A2D2558D15F001DAA0F /* MovieListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractor.swift; sourceTree = "<group>"; };
+		91CC031C2587982900993829 /* MovieListFakeErrorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListFakeErrorInteractor.swift; sourceTree = "<group>"; };
+		91F399002589862D0012F683 /* RatingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewTests.swift; sourceTree = "<group>"; };
+		91F39904258988AC0012F683 /* DateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTests.swift; sourceTree = "<group>"; };
 		91F82BF5255977B400047732 /* MovieDB-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieDB-VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F82BFA2559986500047732 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		91F82BFE25599BDD00047732 /* MovieEntityGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntityGenerator.swift; sourceTree = "<group>"; };
@@ -110,8 +117,10 @@
 			isa = PBXGroup;
 			children = (
 				911BCBFF2580F3A8004639EF /* Helpers */,
-				911BCBF52580F287004639EF /* MovieDB_VIPERTests.swift */,
 				911BCBF72580F287004639EF /* Info.plist */,
+				911BCC1B25810775004639EF /* MovieListPresenterBinding.swift */,
+				91F399002589862D0012F683 /* RatingViewTests.swift */,
+				91F39904258988AC0012F683 /* DateFormatterTests.swift */,
 			);
 			path = "MovieDB-VIPERTests";
 			sourceTree = "<group>";
@@ -121,6 +130,7 @@
 			children = (
 				911BCC002580F3E2004639EF /* MovieListFakeStatePresenter.swift */,
 				911BCC152580FFF0004639EF /* MovieListFakeInteractor.swift */,
+				91CC031C2587982900993829 /* MovieListFakeErrorInteractor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -365,7 +375,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				911BCBF62580F287004639EF /* MovieDB_VIPERTests.swift in Sources */,
+				91CC031D2587982900993829 /* MovieListFakeErrorInteractor.swift in Sources */,
+				911BCC1C25810775004639EF /* MovieListPresenterBinding.swift in Sources */,
+				91F399012589862D0012F683 /* RatingViewTests.swift in Sources */,
+				91F39905258988AC0012F683 /* DateFormatterTests.swift in Sources */,
 				911BCC162580FFF0004639EF /* MovieListFakeInteractor.swift in Sources */,
 				911BCC012580F3E2004639EF /* MovieListFakeStatePresenter.swift in Sources */,
 			);
@@ -397,6 +410,7 @@
 				91408A252558CE0C001DAA0F /* MovieListRouter.swift in Sources */,
 				91408A04255892BF001DAA0F /* ServiceLayer.swift in Sources */,
 				914089FE255889BE001DAA0F /* ImageService.swift in Sources */,
+				91F3990C258A22FC0012F683 /* MovieListFakeInteractor.swift in Sources */,
 				91F82C0325599D1D00047732 /* MovieGenres.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,7 +594,7 @@
 				DEVELOPMENT_TEAM = 596PS285KG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "MovieDB-VIPER/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,7 +616,7 @@
 				DEVELOPMENT_TEAM = 596PS285KG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "MovieDB-VIPER/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

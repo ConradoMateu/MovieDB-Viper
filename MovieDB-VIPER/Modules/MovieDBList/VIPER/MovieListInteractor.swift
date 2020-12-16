@@ -37,7 +37,7 @@ class MovieListInteractor: ObservableObject, MovieListInteractorProtocol {
   func fetchData() -> AnyCancellable{
     return self.getPopular().on(queue: .main)
   .on(success: { [weak self] data in
-    self?.sucess(for: data.results)
+self?.sucess(for: data.results)
   }, failure: { [weak self] error in
     self?.error(for: error)
   })

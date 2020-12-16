@@ -5,6 +5,7 @@
 //  Created by Conrado Mateu on 09/11/2020.
 //
 
+
 import SwiftUI
 import Combine
 struct MovieListView: View  {
@@ -30,6 +31,9 @@ struct MovieListView: View  {
   .navigationBarHidden(true)
     .onReceive(presenter.MoviePresenterStatePublished){ presenterState in
       self.state = presenterState
+    }
+    .onAppear(){
+      presenter.fetchData()
     }
 }
 
@@ -72,8 +76,8 @@ func showListView() -> some View {
 struct MovieList_Previews: PreviewProvider {
   static var previews: some View {
     let viewModel = MovieListViewModel()
-    viewModel.initFake()
-    let interactor = MovieListInteractor(model: viewModel)
+    
+    let interactor = MovieListFakeInteractor(model: viewModel,movies: MovieEntity.fakes(quantity: 6))
     let presenter = MovieListPresenter(interactor: interactor)
     return MovieListView(presenter: presenter)
       .background(Color.brand_background.edgesIgnoringSafeArea(.all))

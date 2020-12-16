@@ -19,9 +19,9 @@ class MovieListFakeInteractor: ObservableObject, MovieListInteractorProtocol {
     self.data = MovieEntity.fakes.toMain()
   }
   
-  convenience init(model: MovieListViewModel,moviesToShow: Int) {
+  convenience init(model: MovieListViewModel,movies: [MovieEntity]) {
     self.init(model: model)
-    self.data = MovieEntity.fakes(quantity: moviesToShow).toMain()
+    self.data = movies.toMain()
   }
   
   func error(for apiError: ApiError) {
@@ -33,9 +33,7 @@ class MovieListFakeInteractor: ObservableObject, MovieListInteractorProtocol {
   }
   func getPopular()  -> AnyPublisher<MainEntity, ApiError>{
 
-    let data = MainEntity(page: 1, results: MovieEntity.fakes)
-    
-    return Just((data))
+    return Just((self.data))
                 .setFailureType(to: ApiError.self)
                 .eraseToAnyPublisher()
   }

@@ -9,8 +9,9 @@ import Foundation
 
 
 extension MovieEntity {
+  static var randomId: Int {Int.random(in: 1...99999)}
   private static var fake: MovieEntity {
-    MovieEntity(id: 598632,
+    MovieEntity(id: randomId,
                 original_title: "Test Movie",
                 title: "Test Test Movie",
                 overview: "This is the overview of a TestMovie",
@@ -23,7 +24,7 @@ extension MovieEntity {
   }
   
   private static var fake2: MovieEntity {
-    MovieEntity(id: 5632,
+    MovieEntity(id: randomId,
                 original_title: "Test Movie",
                 title: "Test Test Movie",
                 overview: "This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie",
@@ -36,7 +37,7 @@ extension MovieEntity {
   }
   
   private static var fake3: MovieEntity {
-    MovieEntity(id: 5632,
+    MovieEntity(id: randomId,
                 original_title: "Test Movie",
                 title: "Test Test Movie",
                 overview: "This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie This is the overview of a TestMovie",

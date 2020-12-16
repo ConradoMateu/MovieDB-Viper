@@ -21,6 +21,8 @@ protocol MovieListPresenterProtocol {
   var router: MovieListRouter {get set}
   var interactor: MovieListInteractorProtocol {get set}
   
+  func fetchData()
+  
   func linkBuilder<Content: View>(for movie: MovieEntity, @ViewBuilder content: () -> Content
   ) -> NavigationLink<Content,AnyView>
   
@@ -32,9 +34,9 @@ final class MovieListPresenter: MovieListPresenterProtocol {
   var interactor: MovieListInteractorProtocol
   var request: AnyCancellable?
 
-  var MoviePresenterStatePublished:Published<MoviePresenterStateEnum>.Publisher {$MoviePresenterState}
+  var MoviePresenterStatePublished:Published<MoviePresenterStateEnum>.Publisher {$moviePresenterState}
   
-  @Published var MoviePresenterState: MoviePresenterStateEnum = .empty
+  @Published var moviePresenterState: MoviePresenterStateEnum = .empty
   private var cancellables = Set<AnyCancellable>()
 
   
@@ -42,7 +44,7 @@ final class MovieListPresenter: MovieListPresenterProtocol {
   @Published var movies: [MovieEntity] = [] {
     didSet{
       if(movies != []){
-        MoviePresenterState = .sucess
+        moviePresenterState = .sucess
       }
     }
   }
@@ -50,7 +52,7 @@ final class MovieListPresenter: MovieListPresenterProtocol {
   @Published var error: ApiError? {
     didSet{
       if(error != nil){
-        MoviePresenterState = .error
+        moviePresenterState = .error
       }
     }
   }
@@ -59,6 +61,9 @@ final class MovieListPresenter: MovieListPresenterProtocol {
   init(interactor: MovieListInteractorProtocol) {
     self.interactor = interactor
     self.bindVariablesToModel()
+  }
+  
+  func fetchData() {
     request = self.interactor.fetchData()
   }
   

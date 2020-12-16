@@ -23,6 +23,7 @@ final class MovieListViewModel: ObservableObject {
     @Published var movies: [MovieEntity] = [] {
        willSet {
             self.objectWillChange.send()
+        print("Changed")
         }
     }
   
@@ -35,12 +36,6 @@ final class MovieListViewModel: ObservableObject {
   }
   
 }
-
-
-extension MovieListViewModel {
-  func initFake() {
-    movies = MovieEntity.fakes
-  }
   
   
-}
+
